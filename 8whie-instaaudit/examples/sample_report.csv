@@ -1,0 +1,2 @@
+Finding ID,Severity,Title,Description,Evidence,Impact,Recommendation,Status
+FIND-CK-01,LOW,Local Cookie Directive Configuration,Session cookie Set-Cookie omitted 'Secure' directive on plain HTTP loopback test interface.,Set-Cookie: session_id=sess_...; Path=/; HttpOnly; SameSite=Strict,Unencrypted transport in untrusted environments.,Enforce 'Secure' flag when deploying with TLS.,OPEN

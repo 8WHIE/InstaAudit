@@ -1,0 +1,3 @@
+Finding ID,Severity,Title,Description,Evidence,Impact,Recommendation,Status
+FIND-RL-01,HIGH,Missing Rate Limiting Header,Login endpoint did not provide complete rate-limiting controls.,"Requests sent: 6, Limited: 0",Allows uninhibited credential stuffing.,Deploy token-bucket rate limiting with Retry-After header.,OPEN
+FIND-CK-01,LOW,Local Cookie Directive Configuration,Session cookie flags are missing Secure flag (common in plain HTTP local labs).,Cookie Set-Cookie lacks Secure directive on localhost HTTP.,Cookie transmission unprotected over non-TLS channels.,Enforce Secure flag when running over HTTPS.,OPEN

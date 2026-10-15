@@ -1,0 +1,6 @@
+{
+  "name": "8WHIE InstaAudit — Authentication Security Laboratory",
+  "description": "Comprehensive defensive authentication-security research and training framework by Aryan Thakur (8WHIE).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

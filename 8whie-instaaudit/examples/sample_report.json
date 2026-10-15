@@ -1,0 +1,55 @@
+{
+  "project": "InstaAudit",
+  "brand": "8WHIE",
+  "founder": "Aryan Thakur",
+  "copyright": "Copyright (c) 2026 Aryan Thakur \u2014 8WHIE.",
+  "official_links": {
+    "instagram_brand": "https://www.instagram.com/8WHIE_/",
+    "instagram_founder": "https://www.instagram.com/imarykt/",
+    "telegram_channel": "https://t.me/whiee",
+    "telegram_contact": "https://t.me/Iaaryan",
+    "youtube": "https://www.youtube.com/@8WHIE",
+    "github": "https://github.com/8WHIE"
+  },
+  "report_id": "audit_sample_01",
+  "timestamp": "2026-10-15T00:00:00Z",
+  "target_scope": "http://127.0.0.1:8080",
+  "tests_summary": {
+    "Authentication": "PASS",
+    "Password Policy": "PASS",
+    "Password Simulation": "PASS",
+    "Credential Simulation": "PASS",
+    "Bot Simulation": "PASS",
+    "Rate Limiting": "PASS",
+    "Lockout": "PASS",
+    "MFA": "PASS",
+    "CAPTCHA": "PASS",
+    "Sessions": "PASS",
+    "Logout": "PASS",
+    "Enumeration": "PASS",
+    "Authorization": "PASS",
+    "HTTP Security": "PASS",
+    "Headers": "PASS",
+    "Cookies": "WARNING",
+    "Logging": "PASS"
+  },
+  "stats": {
+    "total_findings": 1,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1
+  },
+  "findings": [
+    {
+      "finding_id": "FIND-CK-01",
+      "severity": "LOW",
+      "title": "Local Cookie Directive Configuration",
+      "description": "Session cookie Set-Cookie omitted 'Secure' directive on plain HTTP loopback test interface.",
+      "evidence": "Set-Cookie: session_id=sess_...; Path=/; HttpOnly; SameSite=Strict",
+      "impact": "Unencrypted transport in untrusted environments.",
+      "recommendation": "Enforce 'Secure' flag when deploying with TLS.",
+      "status": "OPEN"
+    }
+  ]
+}

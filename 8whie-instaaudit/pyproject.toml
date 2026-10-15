@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "8whie-instaaudit"
+version = "1.0.0"
+description = "Defensive authentication-security research and training framework by Aryan Thakur (8WHIE)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Aryan Thakur", email = "iaryan9905@gmail.com"}
+]
+keywords = ["security", "authentication", "audit", "cybersecurity", "8WHIE", "research"]
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+instaaudit = "instaaudit.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

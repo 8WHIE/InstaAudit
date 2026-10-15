@@ -1,0 +1,65 @@
+{
+  "project": "InstaAudit",
+  "brand": "8WHIE",
+  "founder": "Aryan Thakur",
+  "copyright": "Copyright (c) 2026 Aryan Thakur \u2014 8WHIE.",
+  "official_links": {
+    "instagram_brand": "https://www.instagram.com/8WHIE_/",
+    "instagram_founder": "https://www.instagram.com/imarykt/",
+    "telegram_channel": "https://t.me/whiee",
+    "telegram_contact": "https://t.me/Iaaryan",
+    "youtube": "https://www.youtube.com/@8WHIE",
+    "github": "https://github.com/8WHIE"
+  },
+  "report_id": "audit_1d42af9a",
+  "timestamp": "2026-10-15T03:04:46.390043+00:00",
+  "target_scope": "http://127.0.0.1:8080",
+  "tests_summary": {
+    "Password Policy": "PASS",
+    "Authentication": "PASS",
+    "Password Simulation": "PASS",
+    "Credential Simulation": "PASS",
+    "Bot Simulation": "PASS",
+    "Rate Limiting": "FAIL",
+    "Lockout": "PASS",
+    "MFA": "PASS",
+    "CAPTCHA": "PASS",
+    "Sessions": "PASS",
+    "Logout": "PASS",
+    "Enumeration": "FAIL",
+    "Authorization": "FAIL",
+    "HTTP Security": "PASS",
+    "Headers": "PASS",
+    "Cookies": "WARNING",
+    "Logging": "PASS"
+  },
+  "stats": {
+    "total_findings": 2,
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1
+  },
+  "findings": [
+    {
+      "finding_id": "FIND-RL-01",
+      "severity": "HIGH",
+      "title": "Missing Rate Limiting Header",
+      "description": "Login endpoint did not provide complete rate-limiting controls.",
+      "evidence": "Requests sent: 6, Limited: 0",
+      "impact": "Allows uninhibited credential stuffing.",
+      "recommendation": "Deploy token-bucket rate limiting with Retry-After header.",
+      "status": "OPEN"
+    },
+    {
+      "finding_id": "FIND-CK-01",
+      "severity": "LOW",
+      "title": "Local Cookie Directive Configuration",
+      "description": "Session cookie flags are missing Secure flag (common in plain HTTP local labs).",
+      "evidence": "Cookie Set-Cookie lacks Secure directive on localhost HTTP.",
+      "impact": "Cookie transmission unprotected over non-TLS channels.",
+      "recommendation": "Enforce Secure flag when running over HTTPS.",
+      "status": "OPEN"
+    }
+  ]
+}

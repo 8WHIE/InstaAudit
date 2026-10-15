@@ -1,0 +1,23 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "rate_limit_per_minute": 5,
+    "lockout_threshold": 3,
+    "lockout_duration_seconds": 30,
+    "session_timeout_seconds": 180
+  },
+  "testing": {
+    "max_password_attempts": 10,
+    "request_delay_seconds": 0.02,
+    "timeout_seconds": 4.0,
+    "stop_on_rate_limit": true,
+    "stop_on_lockout": true
+  },
+  "logging": {
+    "level": "DEBUG",
+    "redact_secrets": true,
+    "log_to_file": true,
+    "log_file": "lab_audit.log"
+  }
+}
